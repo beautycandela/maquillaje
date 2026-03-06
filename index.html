@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Pro | E-Commerce One Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #b38e5d;
+            --black: #111;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+            --text-muted: #666;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: var(--black); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px; }
+        .btn {
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--gold); color: var(--white); }
+
+        /* Products Section */
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--gray);
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; }
+        .product-card h3 { font-size: 1rem; margin-bottom: 10px; }
+        .price { color: var(--gold); font-weight: bold; margin-bottom: 15px; }
+
+        /* Brand Story */
+        .story { background: var(--gray); display: flex; align-items: center; flex-wrap: wrap; }
+        .story-text { flex: 1; padding: 50px; min-width: 300px; }
+        .story-img { flex: 1; min-width: 300px; height: 500px; background: url('https://images.unsplash.com/photo-1596462502278-27bfad450526?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover; }
+
+        /* Footer */
+        footer { background: var(--black); color: var(--white); padding: 50px 5% 20px; text-align: center; }
+        .newsletter input { padding: 10px; width: 250px; border: none; }
+        .newsletter button { padding: 10px 20px; background: var(--gold); border: none; color: white; cursor: pointer; }
+        .copyright { margin-top: 40px; font-size: 0.8rem; border-top: 1px solid #333; padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Simplificación para móvil */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BEAUTY PRO</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Define tu Belleza</h1>
+            <p style="margin-bottom: 30px;">Inspirado en la alta cosmética profesional.</p>
+            <a href="#productos" class="btn">Comprar Ahora</a>
+        </div>
+    </header>
+
+    <section class="section" id="productos">
+        <div class="section-title">
+            <h2>Nuestra Selección</h2>
+            <p>Los favoritos de la temporada</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1527633402834-7c02b1441e42?auto=format&fit=crop&w=500&q=80" alt="Base">
+                <h3>Base Perfeccionadora</h3>
+                <p class="price">$29.99</p>
+                <a href="#" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Añadir</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="Labial">
+                <h3>Labial Matte Intenso</h3>
+                <p class="price">$19.99</p>
+                <a href="#" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Añadir</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=500&q=80" alt="Sombras">
+                <h3>Paleta de Sombras Nude</h3>
+                <p class="price">$35.00</p>
+                <a href="#" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Añadir</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?auto=format&fit=crop&w=500&q=80" alt="Mascara">
+                <h3>Máscara Volumen Total</h3>
+                <p class="price">$24.50</p>
+                <a href="#" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Añadir</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="nosotros">
+        <div class="story-img"></div>
+        <div class="story-text">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">Ciencia y Belleza</h2>
+            <p>Creemos en el empoderamiento a través del cuidado personal. Cada uno de nuestros productos ha sido testado dermatológicamente para ofrecerte no solo color, sino salud para tu piel.</p>
+            <br>
+            <p><i>"La elegancia es la única belleza que nunca desaparece."</i></p>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="newsletter">
+            <h3>Únete al Club VIP</h3>
+            <p style="margin-bottom: 20px;">Recibe ofertas exclusivas y consejos de maquillaje.</p>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button>Suscribirse</button>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Beauty Pro. Inspirado en estándares de calidad internacional.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
